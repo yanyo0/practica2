@@ -1,0 +1,19 @@
+.contain{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: 1%;
+    background-color: black;
+} 
+
+.modeLigth {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: 1%;
+    background-color: rgb(206, 203, 203);
+}

@@ -1,0 +1,24 @@
+.nav {
+width: 100%;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+}
+
+.img{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+   background-color: black;
+}
+
+.title{
+    font-size: 160% ;
+    color: pink;
+} 
+
+.modeLigth {
+    font-size: 160% ;
+    color: rgb(194, 100, 116);
+}

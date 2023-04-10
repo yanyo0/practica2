@@ -1,0 +1,31 @@
+.searchBar {
+    margin-top: 5%;
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.form{
+    display: flex;
+    justify-content: center;
+}
+
+.inputSearch, .btnSearch{
+    padding: 2%;
+    background-color: rgba(255, 192, 203, 0.11);
+    color: rgb(197, 66, 88);
+    font-size: 110%;
+    border: 1px solid red;
+    border-radius: 8px;
+}
+
+.btnSearch{
+ margin-left: 2%;
+}
+
+.red{
+    color: red;
+    font-size: 120%;
+}

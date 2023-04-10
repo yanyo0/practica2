@@ -1,0 +1,25 @@
+.darkMode{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+} 
+
+
+.ligthMode{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(206, 203, 203);
+}
+
+.mode {
+    font-size: 150%;
+    align-self: flex-end;
+    border: 2px solid rgb(196, 107, 122);
+    margin-right: 10%;
+    padding: 1%;
+    border-radius: 15%;
+}
