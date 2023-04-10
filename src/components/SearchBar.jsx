@@ -2,7 +2,7 @@ import { useState } from "react";
 import style from "./SearchBar.module.css"
 
 
-export default function SearchBar({ onSearch, errorData }) {
+export default function SearchBar({ onSearch, errorData}) {
 
   const [valueSearch , setValueSearch] = useState("")
 
@@ -13,7 +13,7 @@ export default function SearchBar({ onSearch, errorData }) {
       setErrorsSearch("* Ingrese una cuidad")
     } else if(!/^[a-z A-Z]+$/i.test(search)){
       setErrorsSearch("* No debe ingresar numeros")
-    } else {
+    }  else {
       setErrorsSearch("")
     }
   }

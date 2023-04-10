@@ -15,7 +15,6 @@ function App() {
 
   const [errorData , setErrorData] = useState("")
 
-  const [include, setInclude] = useState([])
 
   const [modeLigth, setmodeLigth] = useState(false)
 
@@ -29,25 +28,31 @@ function App() {
     const  search = async (ciudad) => {
       
       try{
-         const response =  await axios(`http://api.openweathermap.org/data/2.5/weather?q=${ciudad}&appid=${apiKey}&units=metric`)
-         const data = response
-        
-         setCities([...cities, 
-          {name: data.data.name,
-           id: data.data.id,
-           min: data.data.main.temp_min,
-           max: data.data.main.temp_max,
-           img: data.data.weather[0].icon,
-           wind: data.data.wind.speed,
-           temp: data.data.main.temp,
-           weather: data.data.weather[0].main,
-           clouds: data.data.clouds.all,
-           latitud: data.data.coord.lat,
-           longitud: data.data.coord.lon
+         const { data } =  await axios(`http://api.openweathermap.org/data/2.5/weather?q=${ciudad}&appid=${apiKey}&units=metric`)
+         console.log(data)
 
-          }])
+         if(!cities.find(city => city.id === data.id)){
+         setCities([...cities, 
+          {name: data.name,
+           id: data.id,
+           min: data.main.temp_min,
+           max: data.main.temp_max,
+           img: data.weather[0].icon,
+           wind: data.wind.speed,
+           temp: data.main.temp,
+           weather: data.weather[0].main,
+           clouds: data.clouds.all,
+           latitud: data.coord.lat,
+           longitud: data.coord.lon
+
+         }])
+         setErrorData("");
+         
+        } else {
+          setErrorData("* La ciudad ya existe");
+         }
         
-          setErrorData("")
+          
         } catch (error) {
          console.log(error)
          setErrorData("* La cuidad no existe")
@@ -62,7 +67,7 @@ function App() {
     return (
       <div className={ modeLigth ? style.ligthMode : style.darkMode } >
 
-        <Nav onSearch={search} errorData={errorData} modeLigth={modeLigth}/>
+        <Nav onSearch={search} errorData={errorData} modeLigth={modeLigth} />
         {
           modeLigth ? < GiMoon color="blue" className={style.mode} onClick={changeMode} /> : < GiUbisoftSun onClick={changeMode} color="yellow" className={style.mode}/>
         }
